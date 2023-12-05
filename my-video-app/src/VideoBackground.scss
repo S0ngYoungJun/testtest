@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    overflow: hidden; /* 페이지 스크롤 제거 */
+    padding: 0;
+    box-sizing:border-box;
+  }
+  
+  .video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* 페이지 내 다른 요소 위에 위치 */
+  }
+  
+  video {
+    width: 100%;
+  height: 100%;
+    object-fit: cover; /* 동영상이 화면을 채우도록 설정 */
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .box {
+    background-color: rgba(0, 0, 0, 0.1); // 투명한 배경 (여기서 0.5는 투명도를 나타냄)
+    color: #fff; // 글자 색상
+    text-align: center;
+  }
+
+  .box1 {
+    background-color: rgba(0, 0, 0, 0.1); // 투명한 배경 (여기서 0.5는 투명도를 나타냄)
+    display:flex;
+    justify-content:space-between;
+    color: #fff; // 글자 색상
+    flex-direction: row;
+    text-align: center;
+    width: 100vw; /* 가로 전체 너비 */
+    height: 15vh; /* 세로 20vh 높이 */
+    
+  }
+  
+  .box:nth-child(1) {
+    top: 20%;
+  }
+  
+  .box:nth-child(2) {
+    top: 50%;
+  }
+  
+  .box:nth-child(3) {
+    top: 80%;
+  }
+
+  .sub-box2 {
+    width:40vw; /* 각 하위 박스 사이의 간격 조절 */
+    height:100%;
+    &:hover .hover-bar {
+      transform: translateY(0);
+    }
+  }
+
+  .hover-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-out;
+  }
